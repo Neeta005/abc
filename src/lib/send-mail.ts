@@ -1,11 +1,11 @@
 "use server";
 
-import FormData from "form-data";
+import NodeFormData from "form-data"; // Rename the Node.js import
 import Mailgun from "mailgun.js";
 
 // Initialize Mailgun client
 // @ts-ignore - Mailgun types are not properly defined
-const mailgun = new Mailgun(FormData);
+const mailgun = new Mailgun(NodeFormData); // Use the Node.js FormData for Mailgun
 const mg = mailgun.client({
   username: "api",
   key: process.env.MAILGUN_API_KEY || "",
@@ -25,7 +25,8 @@ async function sendMailgunDirectAPI(to: string, subject: string, text: string, h
   const domain = DOMAIN;
   const url = `https://api.mailgun.net/v3/${domain}/messages`;
 
-  const formData = new FormData();
+  // Use Node.js FormData for server-side requests
+  const formData = new NodeFormData();
   formData.append('from', `World of Interns <postmaster@${domain}>`);
   formData.append('to', to);
   formData.append('subject', subject);
@@ -45,8 +46,10 @@ async function sendMailgunDirectAPI(to: string, subject: string, text: string, h
         method: 'POST',
         headers: {
           'Authorization': `Basic ${Buffer.from(`api:${apiKey}`).toString('base64')}`,
+          // Don't set Content-Type header, let Node.js FormData handle it
+          ...formData.getHeaders(), // This adds the proper multipart headers
         },
-        body: formData,
+        body: formData as any, // Type assertion for Node.js FormData
       });
 
       if (!response.ok) {
