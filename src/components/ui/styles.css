@@ -1,0 +1,50 @@
+@import "leaflet/dist/leaflet.css";
+
+.IconButton {
+    all: unset; /* Keeps reset of default button styles */
+    font-family: inherit;
+    border-radius: 50%; /* More modern than 100% */
+    height: 28px; /* Slightly larger for better touch target */
+    width: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--violet-11);
+    position: absolute;
+    top: 8px; /* Adjusted for better spacing */
+    right: 8px;
+    background-color: var(--gray-3);
+    cursor: pointer; /* Better UX */
+    transition: all 0.2s ease-in-out; /* Smooth transitions */
+    user-select: none; /* Prevents text selection */
+    -webkit-tap-highlight-color: transparent; /* Removes mobile tap highlight */
+}
+
+.IconButton:hover {
+    background-color: var(--violet-4);
+    color: var(--violet-12); /* Enhanced contrast on hover */
+    transform: scale(1.05); /* Subtle grow effect */
+}
+
+.IconButton:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px var(--violet-7), 
+                0 2px 4px rgba(0, 0, 0, 0.1); /* Enhanced focus state */
+}
+
+.IconButton:active {
+    transform: scale(0.95); /* Click feedback */
+    background-color: var(--violet-5); /* Darker on click */
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .IconButton {
+        transition: none; /* Respects user motion preferences */
+    }
+}
+
+/* Optional: Add subtle shadow for depth */
+.IconButton {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}

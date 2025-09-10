@@ -1,0 +1,554 @@
+/**
+ * RESPONSIVE CSS
+ * 
+ * This file contains traditional breakpoint-based responsive styles for non-Hero components.
+ * Hero component styles have been moved to hero-fluid.css and use a fluid responsive approach.
+ */
+
+/* Responsive styles for 1024px (tablet) resolution */
+@media (max-width: 1024px) {
+  /* Stepper section responsive styles */
+  .stepper-container {
+    padding: 0 16px;
+  }
+  
+  /* Make the How It Works section visible on 1024px */
+  .hidden.md\:flex {
+    display: flex !important;
+  }
+  
+  .hidden.md\:block {
+    display: block !important;
+  }
+  
+  /* Ensure stepper items are displayed horizontally in 4 columns for 1024px */
+  .grid.grid-cols-1.sm\:grid-cols-2.md\:grid-cols-4.gap-8.relative {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+  
+  /* Adjust stepper item sizes for 1024px */
+  .flex.flex-col.items-center.text-center.relative.z-10 {
+    padding: 0 0.5rem;
+  }
+  
+  /* Adjust icon sizes for better fit on 1024px */
+  .w-20.h-20.rounded-full.flex.items-center.justify-center.mb-6 {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Ensure step titles are readable */
+  .text-lg.font-semibold.mb-2 {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Ensure text is readable on 1024px */
+  .text-\[14px\].md\:text-\[16px\] {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Make sure the stepper dots are visible */
+  .flex.hidden.md\:flex.justify-center.items-center.px-12.mb-\[50px\].mt-8.relative {
+    display: flex !important;
+  }
+  
+  /* Pricing section responsive styles */
+  .pricing-card {
+    max-width: 320px !important;
+    padding: 1.5rem !important;
+  }
+  
+  .pricing-cards-container {
+    gap: 16px !important;
+  }
+  
+  .pricing-title {
+    font-size: 32px !important;
+  }
+  
+  .pricing-price {
+    font-size: 42px !important;
+  }
+  
+  .pricing-description {
+    font-size: 18px !important;
+  }
+  
+  .pricing-feature {
+    margin-bottom: 12px !important;
+  }
+  
+  /* Background ellipses for proper display on 1024px */
+  .ellipse-bg {
+    width: 100% !important;
+    left: 0 !important;
+  }
+  
+  /* Hero section styles are now handled by fluid responsive design in the Hero component */
+  /* These styles are kept for reference but are no longer applied */
+  /*
+  #left-silhouette {
+    left: 5% !important;
+    bottom: 37.5% !important;
+    height: 40% !important;
+    width: 40% !important;
+    transform: scaleX(-1) rotate(-5deg) !important;
+  }
+  
+  #right-silhouette {
+    right: 5% !important;
+    bottom: 36.5% !important;
+    height: 40% !important;
+    width: 40% !important;
+    transform: scaleX(1) rotate(-5deg) !important;
+  }
+  */
+}
+
+/* Specific fix for the Stats section at 768px tablet resolution */
+@media (width: 768px) {
+  /* Fix for Stats cards getting chopped off on the right */
+  .mt-12.grid.grid-cols-1.md\:grid-cols-3.gap-12.max-w-6xl.mx-auto.p-6.rounded-lg {
+    max-width: 95% !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    gap: 8px !important;
+  }
+  
+  /* Adjust stat card padding for better fit */
+  .flex.flex-col.items-center.py-10.px-10.gap-4.rounded-xl.w-full {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    min-width: 220px !important;
+  }
+}
+
+/* Responsive styles for large mobile devices (425px - 767px) */
+@media (max-width: 767px) and (min-width: 427px) {
+  /* Stepper section responsive styles for large mobile */
+  /* Display the stepper in a vertical layout */
+  .flex.flex-col.justify-center.py-12.relative.overflow-hidden {
+    padding: 1.5rem 1rem;
+  }
+  
+  /* Create a mobile version of the stepper */
+  .hidden.md\:flex {
+    display: none !important; /* Hide the desktop version */
+  }
+  
+  /* Hide desktop stepper grid */
+  .max-w-7xl.hidden.md\:flex.mx-auto.px-4.sm\:px-6.lg\:px-8 {
+    display: none !important;
+  }
+  
+  /* Show mobile stepper only */
+  .md\:hidden.mx-auto.px-4.sm\:px-6.mt-6 {
+    display: block !important;
+  }
+  
+  /* Adjust spacing between mobile steps */
+  .flex.flex-col.space-y-12 {
+    margin-bottom: 2rem;
+  }
+  
+  /* Enhance step number visibility */
+  .absolute.top-0.right-0.w-6.h-6.rounded-full.flex.items-center.justify-center {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Adjust heading sizes for mobile */
+  .font-sans.text-center.text-white.font-bold.xs\:text-\[20px\].md\:text-\[25px\].lg\:text-\[35px\].xl\:text-\[40px\] {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Adjust subheading for mobile */
+  .text-center.text-\[14px\].text-\[16px\].text-white.mb-\[50px\].capitalize {
+    font-size: 16px !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* General rules to prevent duplicate sections on mobile */
+@media (max-width: 767px) {
+  /* Ensure sections with both mobile and desktop versions don't show duplicates */
+  .hidden.md\:flex, .hidden.md\:block {
+    display: none !important;
+  }
+  
+  .md\:hidden {
+    display: block !important;
+  }
+  
+  /* Fix for WhyIntern heading text getting cut off */
+  .w-full.lg\:container.antialiased.bg-\[\#0B1019\] h1 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* Hero Section Image Positioning has been moved to hero-fluid.css */
+/* The following section is removed as we're now using fluid responsive design */
+
+  #left-silhouette {
+    left: 5% !important; // Adjust left position
+    bottom: 37.5% !important; // Adjust bottom position
+    height: 40% !important; // Adjust height
+    width: 40% !important; // Adjust width
+    transform: scaleX(-1) rotate(-5deg) !important; // Adjust rotation angle
+  }
+  
+  #right-silhouette {
+    right: 5% !important; // Adjust right position
+    bottom: 36.5% !important; // Adjust bottom position
+    height: 40% !important; // Adjust height
+    width: 40% !important; // Adjust width
+    transform: scaleX(1) rotate(-5deg) !important; // Adjust rotation angle
+  }
+  
+  // Three students image positioning and rotation for 1024px
+  .flex.justify-center.md\:mt-\[-5px\].xs\:mt-\[5px\].md\:mb-\[18px\].lg\:mb-\[38px\].xl\:mb-\[48px\].relative {
+    position: relative !important;
+    margin-top: 10px !important; // Adjust top margin
+    margin-bottom: 20px !important; // Adjust bottom margin
+  }
+  
+  // Three students image size for 1024px
+  .flex.justify-center.md\:mt-\[-5px\].xs\:mt-\[5px\].md\:mb-\[18px\].lg\:mb-\[38px\].xl\:mb-\[48px\].relative > div img {
+    width: 463.5px !important; // Adjust width
+    height: auto !important;
+  }
+  
+  // Three students image rotation for 1024px
+  .flex.justify-center.md\:mt-\[-5px\].xs\:mt-\[5px\].md\:mb-\[18px\].lg\:mb-\[38px\].xl\:mb-\[48px\].relative > div {
+    transform: rotate(0deg) !important; // Adjust rotation angle
+  }
+  
+  // Avatar positioning - you can adjust these values manually
+  // Avatar 2 - Bottom Left
+  .avatarcard.absolute.xs\:top-\[55\%\].xs\:left-\[0\%\].md\:top-\[79\.5\%\].md\:left-\[12\.5\%\] {
+    top: 76% !important;
+    left: 3% !important;
+    transform: rotate(0deg) !important; // Adjust rotation angle
+  }
+  
+  // Avatar 3 - Bottom Right
+  .avatarcard.absolute.xs\:top-\[85\%\].xs\:left-\[85\%\].md\:top-\[80\.5\%\].md\:left-\[76\%\] {
+    top: 76% !important;
+    left: 72% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+  }
+  
+  /* Avatar 5 - Bottom Center */
+  .avatarcard.absolute.xs\:top-\[82\%\].xs\:left-\[5\%\].md\:top-\[80\%\].md\:left-\[27\.5\%\] {
+    top: 75.5% !important;
+    left: 22% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+  }
+  
+  /* Avatar 6 - Top Right */
+  .avatarcard.absolute.xs\:top-\[57\%\].xs\:right-\[0\%\].md\:top-\[65\%\].md\:right-\[16\%\] {
+    top: 61% !important;
+    right: 8% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+  }
+  
+  /* Avatar 1 - Middle Right */
+  .avatarcard.absolute.hidden.md\:block.top-\[93\.75\%\].left-\[65\.75\%\] {
+    top: 88% !important;
+    left: 69% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+  }
+  
+  /* Move heading text and subtext down for 1024px */
+  .relative.container.mx-auto.text-center.text-white.z-5 > .flex.flex-col.items-center.justify-center {
+    margin-top: 20px !important;
+  }
+  
+  /* Slightly shrink font size of heading text */
+  .font-sans.hidden.md\:block.font-bold.text-center.tracking-\[1\%\].leading-\[150\%\] {
+    font-size: 1.6rem !important;
+  }
+  
+  /* Slightly shrink font size of subheading text */
+  .hidden.md\:block.mx-auto.mt-6 {
+    font-size: 15px !important;
+    line-height: 26px !important;
+    margin-top: 10px !important;
+  }
+  
+  /* Make sure the background and colors are maintained */
+  .inline-block.px-6.py-1.rounded-xl {
+    background: rgba(255, 255, 255, 0.6) !important;
+  }
+  
+  /* Make the Get Started button slightly smaller */
+  .flex.flex-row.justify-center.items-center.gap-5.w-\[190px\].h-\[60px\].text-white.font-bold.rounded-\[10px\].shadow-md.mt-8.mb-8.mx-auto {
+    width: 180px !important;
+    height: 55px !important;
+  }
+}
+
+/* For 768px (Tablet Portrait) */
+@media (max-width: 768px) {
+  /* Silhouette images positioning */
+  #left-silhouette {
+    left: 2% !important;
+    bottom: 38% !important;
+    height: 35% !important;
+    width: 35% !important;
+    transform: scaleX(-1) rotate(5deg) !important; /* Adjust rotation angle */
+  }
+  
+  #right-silhouette {
+    right: 2% !important;
+    bottom: 38% !important;
+    height: 35% !important;
+    width: 35% !important;
+    transform: scaleX(1) rotate(1deg) !important; /* Adjust rotation angle */
+  }
+  
+  /* Three students image positioning */
+  .flex.justify-center.md\:mt-\[-5px\].xs\:mt-\[5px\].md\:mb-\[18px\].lg\:mb-\[38px\].xl\:mb-\[48px\].relative {
+    margin-top: 0px !important;
+    margin-bottom: -10px !important;
+  }
+  
+  /* Three students image rotation */
+  .flex.justify-center.md\:mt-\[-5px\].xs\:mt-\[5px\].md\:mb-\[18px\].lg\:mb-\[38px\].xl\:mb-\[48px\].relative > div {
+    transform: rotate(1.5deg) !important; /* Adjust rotation angle */
+  }
+  
+  /* Avatar positioning - you can adjust these values manually */
+  /* Avatar 2 - Bottom Left */
+  .avatarcard.absolute.xs\:top-\[55\%\].xs\:left-\[0\%\].md\:top-\[79\.5\%\].md\:left-\[12\.5\%\] {
+    top: 80% !important;
+    left: 10% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+  }
+  
+  /* Avatar 3 - Bottom Right */
+  .avatarcard.absolute.xs\:top-\[85\%\].xs\:left-\[85\%\].md\:top-\[80\.5\%\].md\:left-\[76\%\] {
+    top: 82% !important;
+    left: 86% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+  }
+  
+  /* Avatar 5 - Bottom Center */
+  .avatarcard.absolute.xs\:top-\[82\%\].xs\:left-\[5\%\].md\:top-\[80\%\].md\:left-\[27\.5\%\] {
+    top: 90% !important;
+    left: 23% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+  }
+  
+  /* Avatar 6 - Top Right */
+  .avatarcard.absolute.xs\:top-\[57\%\].xs\:right-\[0\%\].md\:top-\[65\%\].md\:right-\[16\%\] {
+    top: 55% !important;
+    right: 15% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+  }
+  
+  /* Avatar 1 - Middle Right */
+  .avatarcard.absolute.hidden.md\:block.top-\[93\.75\%\].left-\[65\.75\%\] {
+    top: 83% !important;
+    left: 68% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+  }
+}
+
+/* Responsive styles for 425px devices - with higher specificity to override Tailwind */
+@media screen and (max-width: 425px) and (min-width: 376px) {
+  /* Silhouette images positioning and rotation for 425px */
+  html body section #left-silhouette {
+    left: -2% !important; /* Adjust left position */
+    bottom: 32% !important; /* Adjust bottom position */
+    height: 35% !important; /* Adjust height */
+    width: 35% !important; /* Adjust width */
+    transform: scaleX(-1) rotate(-10deg) !important; /* Adjust rotation angle */
+    z-index: 10 !important;
+  }
+  
+  html body section #right-silhouette {
+    right: -2% !important; /* Adjust right position */
+    bottom: 32% !important; /* Adjust bottom position */
+    height: 35% !important; /* Adjust height */
+    width: 35% !important; /* Adjust width */
+    transform: scaleX(1) rotate(-5deg) !important; /* Adjust rotation angle */
+    z-index: 10 !important;
+  }
+  
+  /* Three students image positioning and rotation for 425px */
+  html body section .container .flex.justify-center.md\:mt-\[-5px\].xs\:mt-\[5px\].md\:mb-\[18px\].lg\:mb-\[38px\].xl\:mb-\[48px\].relative {
+    position: relative !important;
+    margin-top: 60px !important; /* Adjust top margin */
+    margin-bottom: 0px !important; /* Adjust bottom margin */
+    z-index: 20 !important;
+  }
+  
+  /* Three students image size for 425px */
+  html body section .container .flex.justify-center.md\:mt-\[-5px\].xs\:mt-\[5px\].md\:mb-\[18px\].lg\:mb-\[38px\].xl\:mb-\[48px\].relative > div img {
+    width: 320px !important; /* Adjust width */
+    height: auto !important;
+    max-width: 100% !important;
+  }
+  
+  /* Three students image rotation for 425px */
+  html body section .container .flex.justify-center.md\:mt-\[-5px\].xs\:mt-\[5px\].md\:mb-\[18px\].lg\:mb-\[38px\].xl\:mb-\[48px\].relative > div {
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    z-index: 20 !important;
+  }
+  
+  /* Avatar positioning for 425px */
+  /* Avatar 1 - Middle Right */
+  html body section .container .avatarcard.absolute.hidden.md\:block.top-\[93\.75\%\].left-\[65\.75\%\] {
+    top: 82% !important;
+    left: 65% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    display: block !important;
+    z-index: 30 !important;
+  }
+  
+  /* Avatar 2 - Bottom Left */
+  html body section .container .avatarcard.absolute.xs\:top-\[55\%\].xs\:left-\[0\%\].md\:top-\[79\.5\%\].md\:left-\[12\.5\%\] {
+    top: 75% !important;
+    left: 5% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    display: block !important;
+    z-index: 30 !important;
+  }
+  
+  /* Avatar 3 - Bottom Right */
+  html body section .container .avatarcard.absolute.xs\:top-\[85\%\].xs\:left-\[85\%\].md\:top-\[80\.5\%\].md\:left-\[76\%\] {
+    top: 80% !important;
+    left: 80% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    display: block !important;
+    z-index: 30 !important;
+  }
+  
+  /* Avatar 5 - Bottom Center */
+  html body section .container .avatarcard.absolute.xs\:top-\[82\%\].xs\:left-\[5\%\].md\:top-\[80\%\].md\:left-\[27\.5\%\] {
+    top: 85% !important;
+    left: 20% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    display: block !important;
+    z-index: 30 !important;
+  }
+  
+  /* Avatar 6 - Top Right */
+  html body section .container .avatarcard.absolute.xs\:top-\[57\%\].xs\:right-\[0\%\].md\:top-\[65\%\].md\:right-\[16\%\] {
+    top: 65% !important;
+    right: 5% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    display: block !important;
+    z-index: 30 !important;
+  }
+  
+  /* Hide the unwanted white cylindrical element */
+  section > div:nth-child(3) {
+    display: none !important;
+  }
+}
+
+/* Responsive styles for 375px devices - with higher specificity to override Tailwind */
+@media screen and (max-width: 375px) {
+  /* Silhouette images positioning and rotation for 375px */
+  html body section #left-silhouette {
+    left: -5% !important; /* Adjust left position */
+    bottom: 30% !important; /* Adjust bottom position */
+    height: 32% !important; /* Adjust height */
+    width: 32% !important; /* Adjust width */
+    transform: scaleX(-1) rotate(-12deg) !important; /* Adjust rotation angle */
+    z-index: 10 !important;
+  }
+  
+  html body section #right-silhouette {
+    right: -5% !important; /* Adjust right position */
+    bottom: 30% !important; /* Adjust bottom position */
+    height: 32% !important; /* Adjust height */
+    width: 32% !important; /* Adjust width */
+    transform: scaleX(1) rotate(-8deg) !important; /* Adjust rotation angle */
+    z-index: 10 !important;
+  }
+  
+  /* Three students image positioning and rotation for 375px */
+  html body section .container .flex.justify-center.md\:mt-\[-5px\].xs\:mt-\[5px\].md\:mb-\[18px\].lg\:mb-\[38px\].xl\:mb-\[48px\].relative {
+    position: relative !important;
+    margin-top: 70px !important; /* Adjust top margin */
+    margin-bottom: 0px !important; /* Adjust bottom margin */
+    z-index: 20 !important;
+  }
+  
+  /* Three students image size for 375px */
+  html body section .container .flex.justify-center.md\:mt-\[-5px\].xs\:mt-\[5px\].md\:mb-\[18px\].lg\:mb-\[38px\].xl\:mb-\[48px\].relative > div img {
+    width: 300px !important; /* Adjust width */
+    height: auto !important;
+    max-width: 100% !important;
+  }
+  
+  /* Three students image rotation for 375px */
+  html body section .container .flex.justify-center.md\:mt-\[-5px\].xs\:mt-\[5px\].md\:mb-\[18px\].lg\:mb-\[38px\].xl\:mb-\[48px\].relative > div {
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    z-index: 20 !important;
+  }
+  
+  /* Avatar positioning for 375px */
+  /* Avatar 1 - Middle Right */
+  html body section .container .avatarcard.absolute.hidden.md\:block.top-\[93\.75\%\].left-\[65\.75\%\] {
+    top: 80% !important;
+    left: 60% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    display: block !important;
+    z-index: 30 !important;
+  }
+  
+  /* Avatar 2 - Bottom Left */
+  html body section .container .avatarcard.absolute.xs\:top-\[55\%\].xs\:left-\[0\%\].md\:top-\[79\.5\%\].md\:left-\[12\.5\%\] {
+    top: 72% !important;
+    left: 2% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    display: block !important;
+    z-index: 30 !important;
+  }
+  
+  /* Avatar 3 - Bottom Right */
+  html body section .container .avatarcard.absolute.xs\:top-\[85\%\].xs\:left-\[85\%\].md\:top-\[80\.5\%\].md\:left-\[76\%\] {
+    top: 78% !important;
+    left: 85% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    display: block !important;
+    z-index: 30 !important;
+  }
+  
+  /* Avatar 5 - Bottom Center */
+  html body section .container .avatarcard.absolute.xs\:top-\[82\%\].xs\:left-\[5\%\].md\:top-\[80\%\].md\:left-\[27\.5\%\] {
+    top: 82% !important;
+    left: 18% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    display: block !important;
+    z-index: 30 !important;
+  }
+  
+  /* Avatar 6 - Top Right */
+  html body section .container .avatarcard.absolute.xs\:top-\[57\%\].xs\:right-\[0\%\].md\:top-\[65\%\].md\:right-\[16\%\] {
+    top: 62% !important;
+    right: 2% !important;
+    transform: rotate(0deg) !important; /* Adjust rotation angle */
+    display: block !important;
+    z-index: 30 !important;
+  }
+  
+  /* Hide the unwanted white cylindrical element */
+  section > div:nth-child(3) {
+    display: none !important;
+  }
+}
+

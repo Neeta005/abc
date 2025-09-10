@@ -1,0 +1,128 @@
+
+
+/* Main container styles */
+.calendar-container {
+    background-color: #1a1e2b;
+    padding: 24px;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hide the default toolbar */
+.rbc-toolbar {
+    display: none;
+}
+
+/* --- Custom Toolbar Styles --- */
+.rbc-toolbar-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.rbc-toolbar-custom .toolbar-left button {
+    background-color: transparent;
+    border: 1px solid #4a4e5f;
+    color: #82aaff; /* CHANGED */
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.rbc-toolbar-custom .toolbar-center {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.rbc-toolbar-custom .toolbar-center button {
+    background: none;
+    border: none;
+    color: #82aaff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.rbc-toolbar-custom .rbc-toolbar-label {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff; /* Main label kept white for prominence */
+}
+.rbc-toolbar-custom .toolbar-right {
+    width: 90px;
+}
+.rbc-month-view {
+    border: 1px solid #2c3142;
+    background-color: #11131e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Day Headers (MON, TUE, etc.) */
+.rbc-header {
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #2c3142;
+    text-align: center;
+    color: #6a8aaa; /* CHANGED */
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Day Cell Backgrounds */
+.rbc-day-bg {
+    border-left: 1px solid #2c3142;
+    background-color: #1a1e2b;
+}
+.rbc-day-bg:first-child {
+    border-left: none;
+}
+
+/* Date Numbers */
+.rbc-date-cell {
+    color: #82aaff; /* CHANGED */
+    text-align: right;
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.rbc-day-slot .rbc-event:focus,
+.rbc-event.rbc-selected {
+    background-color: inherit;
+}
+
+.rbc-off-range .rbc-date-cell,
+.rbc-off-range a {
+    background: #000 !important;
+}
+
+.rbc-off-range-bg {
+    background: #1a1e2b !important;
+    background-image: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 5px,
+        rgba(92, 96, 107, 0.2) 10px,
+        rgba(105, 108, 117, 0.2) 11px
+    ) !important;
+}
+
+.rbc-show-more {
+    color: #82aaff;
+    background-color: transparent;
+    font-size: 0.8rem;
+    padding-top: 5px;
+}
+
+.rbc-show-more:hover {
+    color: #b3caff;
+}
+
+.relative .calendar-container {
+    padding-top: 0 !important;
+}
